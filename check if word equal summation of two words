@@ -1,0 +1,16 @@
+# check if word equal summation of two words
+ #include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+int wordToNumber(const char* word) {
+    int number = 0;
+    for (int i = 0; word[i] != '\0'; i++) {
+        number = number * 10 + (word[i] - 'a');
+    }return number;
+}
+bool isSumEqual(const char* firstWord, const char* secondWord, const char* targetWord) {
+    int firstValue = wordToNumber(firstWord);
+    int secondValue = wordToNumber(secondWord);
+    int targetValue = wordToNumber(targetWord);
+    return (firstValue + secondValue) == targetValue;
+}
